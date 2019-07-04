@@ -10,6 +10,8 @@ import GridItem from "components/Grid/GridItem.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
+import axios from 'axios'
+
 import workStyle from "assets/jss/material-kit-react/views/landingPageSections/workStyle.jsx";
 
 class WorkSection extends React.Component {
@@ -34,7 +36,7 @@ class WorkSection extends React.Component {
       message: this.state.message
     }
 
-    axios.post('APIURL', data)
+    axios.post('https://nodejs-express-3csnvx5f2.now.sh/', data)
     .then( res => {
       this.setState({sent: true, buttonText: "Message Sent"})
     }).catch(() => {
